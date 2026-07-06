@@ -1,9 +1,10 @@
 import "./Sidebar.css";
+
 import {
   FaDesktop,
   FaMobileAlt,
   FaTabletAlt,
-  FaImages,
+  FaCube,
   FaLayerGroup,
   FaPalette,
   FaHistory,
@@ -16,29 +17,19 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       {/* Overlay */}
 
       <div
-        className={`sidebar-overlay ${sidebarOpen ? "show-overlay" : ""}`}
+        className={`overlay ${sidebarOpen ? "show-overlay" : ""}`}
         onClick={() => setSidebarOpen(false)}
       ></div>
 
       <aside className={`sidebar ${sidebarOpen ? "show-sidebar" : ""}`}>
         {/* Close Button */}
 
-        <button className="close-btn" onClick={() => setSidebarOpen(false)}>
+        <button className="close-sidebar" onClick={() => setSidebarOpen(false)}>
           <FaTimes />
         </button>
 
-        {/* Logo */}
-
-        <div className="sidebar-logo">
-          <span className="logo-dot"></span>
-
-          <h2>folio.</h2>
-        </div>
-
-        {/* Pages */}
-
-        <div className="sidebar-section">
-          <p className="sidebar-title">PAGES</p>
+        <div className="sidebar-content">
+          <h5>PAGES</h5>
 
           <ul>
             <li className="active">
@@ -57,7 +48,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </li>
 
             <li>
-              <FaImages />
+              <FaCube />
               Assets
             </li>
 
@@ -66,12 +57,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               Extra
             </li>
           </ul>
-        </div>
 
-        {/* Other */}
-
-        <div className="sidebar-section">
-          <p className="sidebar-title">OTHER</p>
+          <h5>OTHER</h5>
 
           <ul>
             <li>
@@ -84,19 +71,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               Changelog
             </li>
           </ul>
+
+          <div className="promotion">
+            <h3>Agency UI Kit</h3>
+
+            <p>Beautiful components for React & Figma inspired projects.</p>
+
+            <button>Learn More</button>
+          </div>
+
+          <div className="copyright">© 2026 Folio Agency</div>
         </div>
-
-        {/* Card */}
-
-        <div className="promo-card">
-          <h3>Agency UI Kit</h3>
-
-          <p>Build beautiful websites faster using modern UI components.</p>
-
-          <button>Explore</button>
-        </div>
-
-        <p className="copyright">© 2026 Folio Agency</p>
       </aside>
     </>
   );

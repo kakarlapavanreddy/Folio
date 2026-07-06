@@ -1,87 +1,136 @@
+:root {
+  --primary: #5865f2;
+  --secondary: #b884f6;
+  --dark: #232242;
+  --background: #fafbff;
+  --border: #ececec;
+  --text: #202040;
+}
+
+/* ============================= */
+
 .navbar {
   position: fixed;
 
   top: 0;
 
-  left: 270px;
+  left: 0;
 
-  right: 0;
+  width: 100%;
 
   height: 90px;
 
-  background: #ffffff;
+  background: #fff;
 
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  justify-content: space-between;
 
   padding: 0 50px;
 
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--border);
 
-  z-index: 900;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+
+  z-index: 1000;
 }
+
+/* ============================= */
 
 .logo {
   display: flex;
 
   align-items: center;
 
-  font-size: 30px;
-
-  font-weight: 700;
-
-  color: #232242;
+  cursor: pointer;
 }
 
-.dot {
-  width: 10px;
+.logo-dot {
+  width: 12px;
 
-  height: 10px;
+  height: 12px;
 
-  background: #5865f2;
+  background: var(--primary);
 
   border-radius: 50%;
 
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
-.nav-links {
+.logo h2 {
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: var(--dark);
+}
+
+/* ============================= */
+
+.navbar-menu {
   display: flex;
 
   gap: 40px;
 }
 
-.nav-links a {
+.navbar-menu a {
   text-decoration: none;
+
+  color: var(--text);
 
   font-size: 16px;
 
   font-weight: 500;
 
-  color: #232242;
+  transition: 0.3s;
+
+  position: relative;
+}
+
+.navbar-menu a:hover {
+  color: var(--primary);
+}
+
+.navbar-menu a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--primary);
 
   transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #5865f2;
+.navbar-menu a:hover::after {
+  width: 100%;
 }
 
-.contact-btn {
-  background: #232242;
+/* ============================= */
 
-  color: #fff;
+.contact-btn {
+  background: var(--dark);
+
+  color: white;
 
   padding: 14px 30px;
 
   border: none;
 
-  border-radius: 12px;
+  border-radius: 14px;
 
   font-size: 15px;
+
+  font-weight: 600;
 
   cursor: pointer;
 
@@ -89,35 +138,57 @@
 }
 
 .contact-btn:hover {
-  background: #5865f2;
+  background: var(--primary);
 }
 
-/* Hamburger */
+/* ============================= */
+
+.navbar-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/* ============================= */
 
 .menu-btn {
   display: none;
 
-  background: none;
+  width: 45px;
+
+  height: 45px;
 
   border: none;
 
-  font-size: 28px;
+  border-radius: 10px;
+
+  background: #f3f4ff;
 
   cursor: pointer;
 
-  color: #232242;
+  font-size: 20px;
+
+  color: var(--dark);
+
+  transition: 0.3s;
 }
 
-/* ---------- Tablet ---------- */
+.menu-btn:hover {
+  background: var(--primary);
 
-@media (max-width: 1024px) {
+  color: white;
+}
+
+/* ============================= */
+
+@media (max-width: 992px) {
   .navbar {
-    left: 0;
-
     padding: 0 25px;
   }
 
-  .nav-links {
+  .navbar-menu {
     display: none;
   }
 
@@ -130,7 +201,7 @@
   }
 }
 
-/* ---------- Mobile ---------- */
+/* ============================= */
 
 @media (max-width: 768px) {
   .navbar {
@@ -139,11 +210,13 @@
     padding: 0 18px;
   }
 
-  .logo {
-    font-size: 24px;
+  .logo h2 {
+    font-size: 28px;
   }
 
   .menu-btn {
-    font-size: 24px;
+    width: 42px;
+
+    height: 42px;
   }
 }

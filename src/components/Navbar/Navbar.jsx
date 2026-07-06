@@ -4,36 +4,39 @@ import { FaBars } from "react-icons/fa";
 function Navbar({ setSidebarOpen }) {
   return (
     <header className="navbar">
-      {/* Mobile Menu */}
+      {/* Left */}
 
-      <button className="menu-btn" onClick={() => setSidebarOpen(true)}>
-        <FaBars />
-      </button>
+      <div className="navbar-left">
+        <div className="logo">
+          <span className="logo-dot"></span>
 
-      {/* Logo */}
-
-      <div className="logo">
-        <span className="dot"></span>
-        folio.
+          <h2>folio.</h2>
+        </div>
       </div>
 
-      {/* Navigation */}
+      {/* Center */}
 
-      <nav className="nav-links">
+      <nav className="navbar-menu">
         <a href="#about">About</a>
 
-        <a href="#projects">Work</a>
-
         <a href="#services">Services</a>
+
+        <a href="#projects">Projects</a>
 
         <a href="#jobs">Jobs</a>
 
         <a href="#contact">Contact</a>
       </nav>
 
-      {/* Button */}
+      {/* Right */}
 
-      <button className="contact-btn">Contact Us</button>
+      <div className="navbar-right">
+        <button className="contact-btn">Contact Us</button>
+
+        <button className="menu-btn" onClick={() => setSidebarOpen(true)}>
+          <FaBars />
+        </button>
+      </div>
     </header>
   );
 }
