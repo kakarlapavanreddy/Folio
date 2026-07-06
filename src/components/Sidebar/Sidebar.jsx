@@ -1,9 +1,10 @@
 import "./Sidebar.css";
+import { useEffect, useState } from "react";
 
 import {
   FaDesktop,
-  FaMobileAlt,
   FaTabletAlt,
+  FaMobileAlt,
   FaCube,
   FaLayerGroup,
   FaPalette,
@@ -12,37 +13,57 @@ import {
 } from "react-icons/fa";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const [device, setDevice] = useState("Desktop");
+
+  useEffect(() => {
+    const checkDevice = () => {
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setDevice("Mobile");
+      } else if (width < 1024) {
+        setDevice("Tablet");
+      } else {
+        setDevice("Desktop");
+      }
+    };
+
+    checkDevice();
+
+    window.addEventListener("resize", checkDevice);
+
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
   return (
     <>
-      {/* Overlay */}
-
       <div
         className={`overlay ${sidebarOpen ? "show-overlay" : ""}`}
         onClick={() => setSidebarOpen(false)}
       ></div>
 
       <aside className={`sidebar ${sidebarOpen ? "show-sidebar" : ""}`}>
-        {/* Close Button */}
-
         <button className="close-sidebar" onClick={() => setSidebarOpen(false)}>
           <FaTimes />
         </button>
 
         <div className="sidebar-content">
-          <h5>PAGES</h5>
+          <h2 className="logo">folio.</h2>
+
+          <p className="heading">PAGES</p>
 
           <ul>
-            <li className="active">
+            <li className={device === "Desktop" ? "active" : ""}>
               <FaDesktop />
               Desktop
             </li>
 
-            <li>
+            <li className={device === "Tablet" ? "active" : ""}>
               <FaTabletAlt />
               Tablet
             </li>
 
-            <li>
+            <li className={device === "Mobile" ? "active" : ""}>
               <FaMobileAlt />
               Mobile
             </li>
@@ -58,7 +79,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </li>
           </ul>
 
-          <h5>OTHER</h5>
+          <p className="heading">OTHER</p>
 
           <ul>
             <li>
@@ -75,12 +96,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           <div className="promotion">
             <h3>Agency UI Kit</h3>
 
-            <p>Beautiful components for React & Figma inspired projects.</p>
-
-            <button>Learn More</button>
+            <p>Automatically detects Desktop, Tablet and Mobile.</p>
           </div>
-
-          <div className="copyright">© 2026 Folio Agency</div>
         </div>
       </aside>
     </>
