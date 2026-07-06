@@ -1,67 +1,61 @@
 import "./Sidebar.css";
-import {
-  FaDesktop,
-  FaMobileAlt,
-  FaImages,
-  FaLayerGroup,
-  FaPalette,
-  FaHistory,
-} from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 function Sidebar() {
+  const [device, setDevice] = useState("Desktop");
+
+  useEffect(() => {
+    const updateDevice = () => {
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setDevice("Mobile");
+      } else if (width < 1024) {
+        setDevice("Tablet");
+      } else {
+        setDevice("Desktop");
+      }
+    };
+
+    updateDevice();
+
+    window.addEventListener("resize", updateDevice);
+
+    return () => window.removeEventListener("resize", updateDevice);
+  }, []);
+
   return (
     <aside className="sidebar">
-      <div className="sidebar-section">
-        <p className="sidebar-title">PAGES</p>
+      <h1 className="logo">folio.</h1>
 
-        <ul className="sidebar-menu">
-          <li className="active">
-            <FaDesktop />
-            <span>Desktop</span>
-          </li>
+      <p className="menu-title">PAGES</p>
 
-          <li>
-            <FaMobileAlt />
-            <span>Mobile</span>
-          </li>
+      <ul className="sidebar-menu">
+        <li className={device === "Desktop" ? "active" : ""}>Desktop</li>
 
-          <li>
-            <FaImages />
-            <span>Assets</span>
-          </li>
+        <li className={device === "Tablet" ? "active" : ""}>Tablet</li>
 
-          <li>
-            <FaLayerGroup />
-            <span>Extra</span>
-          </li>
-        </ul>
+        <li className={device === "Mobile" ? "active" : ""}>Mobile</li>
+
+        <li>Assets</li>
+
+        <li>Extra</li>
+      </ul>
+
+      <p className="menu-title">OTHER</p>
+
+      <ul className="sidebar-menu">
+        <li>Style Guide</li>
+
+        <li>Changelog</li>
+      </ul>
+
+      <div className="promo-card">
+        <h3>Agency UI Kit</h3>
+        <p>Create beautiful websites faster.</p>
       </div>
 
-      <div className="sidebar-section">
-        <p className="sidebar-title">OTHER</p>
-
-        <ul className="sidebar-menu">
-          <li>
-            <FaPalette />
-            <span>Style Guide</span>
-          </li>
-
-          <li>
-            <FaHistory />
-            <span>Changelog</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="sidebar-card">
-        <h3>Need Help?</h3>
-
-        <p>Build beautiful React websites with reusable components.</p>
-
-        <button>Learn More</button>
-      </div>
-
-      <p className="copyright">© 2026 Folio Agency</p>
+      <p className="copyright">© 2026</p>
     </aside>
   );
 }
