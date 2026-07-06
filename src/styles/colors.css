@@ -1,0 +1,78 @@
+:root {
+  /* ===========================
+   PRIMARY COLORS
+=========================== */
+
+  --primary: #5b67f1;
+  --primary-light: #cfe6ff;
+
+  --secondary: #b887f5;
+  --secondary-light: #ddb7ff;
+
+  --dark: #262548;
+  --dark-light: #3b3a70;
+
+  --light: #ffffff;
+  --light-gray: #f7f8fc;
+
+  /* ===========================
+   ACCENT COLORS
+=========================== */
+
+  --accent-pink: #f5b4d3;
+  --accent-pink-light: #f8d6e8;
+
+  --accent-orange: #ffb85f;
+  --accent-orange-light: #ffd184;
+
+  --accent-purple: #8f88ea;
+  --accent-purple-light: #a89ff2;
+
+  --accent-green: #68c8b7;
+  --accent-green-light: #92dccf;
+
+  --accent-blue: #4487d3;
+  --accent-blue-light: #72adeb;
+
+  /* ===========================
+   TEXT COLORS
+=========================== */
+
+  --text: #202040;
+  --text-light: #777777;
+  --text-gray: #aaaaaa;
+
+  /* ===========================
+   BORDER
+=========================== */
+
+  --border: #ececec;
+
+  /* ===========================
+   BACKGROUND
+=========================== */
+
+  --background: #fafbff;
+
+  --card: #ffffff;
+
+  --section: #f9faff;
+
+  /* ===========================
+   SHADOW
+=========================== */
+
+  --shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+
+  /* ===========================
+   GRADIENTS
+=========================== */
+
+  --gradient-primary: linear-gradient(135deg, #5b67f1 0%, #8f88ea 100%);
+
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+
+  --gradient-dark: linear-gradient(135deg, #232242 0%, #353565 100%);
+}

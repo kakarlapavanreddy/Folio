@@ -1,0 +1,59 @@
+.navbar {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  height: 90px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 70px;
+
+  background: white;
+
+  z-index: 1000;
+
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-logo h1 {
+  font-size: 42px;
+  color: #160be1;
+  margin-bottom: 40px;
+}
+
+.sidebar-logo span {
+  color: #5865f2;
+}
+
+nav {
+  display: flex;
+
+  gap: 45px;
+}
+
+nav a {
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+.contact-btn {
+  padding: 15px 32px;
+
+  background: #232242;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+}

@@ -1,0 +1,24 @@
+.layout {
+  display: flex;
+
+  margin-top: 90px;
+}
+
+.content {
+  margin-left: 280px;
+
+  width: calc(100% - 280px);
+
+  background: #fafbff;
+
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
