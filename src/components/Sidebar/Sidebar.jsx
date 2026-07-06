@@ -1,62 +1,104 @@
 import "./Sidebar.css";
-import { useEffect, useState } from "react";
+import {
+  FaDesktop,
+  FaMobileAlt,
+  FaTabletAlt,
+  FaImages,
+  FaLayerGroup,
+  FaPalette,
+  FaHistory,
+  FaTimes,
+} from "react-icons/fa";
 
-function Sidebar() {
-  const [device, setDevice] = useState("Desktop");
-
-  useEffect(() => {
-    const updateDevice = () => {
-      const width = window.innerWidth;
-
-      if (width < 768) {
-        setDevice("Mobile");
-      } else if (width < 1024) {
-        setDevice("Tablet");
-      } else {
-        setDevice("Desktop");
-      }
-    };
-
-    updateDevice();
-
-    window.addEventListener("resize", updateDevice);
-
-    return () => window.removeEventListener("resize", updateDevice);
-  }, []);
-
+function Sidebar({ sidebarOpen, setSidebarOpen }) {
   return (
-    <aside className="sidebar">
-      <h1 className="logo">folio.</h1>
+    <>
+      {/* Overlay */}
 
-      <p className="menu-title">PAGES</p>
+      <div
+        className={`sidebar-overlay ${sidebarOpen ? "show-overlay" : ""}`}
+        onClick={() => setSidebarOpen(false)}
+      ></div>
 
-      <ul className="sidebar-menu">
-        <li className={device === "Desktop" ? "active" : ""}>Desktop</li>
+      <aside className={`sidebar ${sidebarOpen ? "show-sidebar" : ""}`}>
+        {/* Close Button */}
 
-        <li className={device === "Tablet" ? "active" : ""}>Tablet</li>
+        <button className="close-btn" onClick={() => setSidebarOpen(false)}>
+          <FaTimes />
+        </button>
 
-        <li className={device === "Mobile" ? "active" : ""}>Mobile</li>
+        {/* Logo */}
 
-        <li>Assets</li>
+        <div className="sidebar-logo">
+          <span className="logo-dot"></span>
 
-        <li>Extra</li>
-      </ul>
+          <h2>folio.</h2>
+        </div>
 
-      <p className="menu-title">OTHER</p>
+        {/* Pages */}
 
-      <ul className="sidebar-menu">
-        <li>Style Guide</li>
+        <div className="sidebar-section">
+          <p className="sidebar-title">PAGES</p>
 
-        <li>Changelog</li>
-      </ul>
+          <ul>
+            <li className="active">
+              <FaDesktop />
+              Desktop
+            </li>
 
-      <div className="promo-card">
-        <h3>Agency UI Kit</h3>
-        <p>Create beautiful websites faster.</p>
-      </div>
+            <li>
+              <FaTabletAlt />
+              Tablet
+            </li>
 
-      <p className="copyright">© 2026</p>
-    </aside>
+            <li>
+              <FaMobileAlt />
+              Mobile
+            </li>
+
+            <li>
+              <FaImages />
+              Assets
+            </li>
+
+            <li>
+              <FaLayerGroup />
+              Extra
+            </li>
+          </ul>
+        </div>
+
+        {/* Other */}
+
+        <div className="sidebar-section">
+          <p className="sidebar-title">OTHER</p>
+
+          <ul>
+            <li>
+              <FaPalette />
+              Style Guide
+            </li>
+
+            <li>
+              <FaHistory />
+              Changelog
+            </li>
+          </ul>
+        </div>
+
+        {/* Card */}
+
+        <div className="promo-card">
+          <h3>Agency UI Kit</h3>
+
+          <p>Build beautiful websites faster using modern UI components.</p>
+
+          <button>Explore</button>
+        </div>
+
+        <p className="copyright">© 2026 Folio Agency</p>
+      </aside>
+    </>
   );
 }
 

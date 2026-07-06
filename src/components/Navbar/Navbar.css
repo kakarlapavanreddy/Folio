@@ -3,11 +3,13 @@
 
   top: 0;
 
-  left: 0;
+  left: 270px;
 
   right: 0;
 
   height: 90px;
+
+  background: #ffffff;
 
   display: flex;
 
@@ -15,45 +17,133 @@
 
   align-items: center;
 
-  padding: 0 70px;
+  padding: 0 50px;
 
-  background: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 
-  z-index: 1000;
-
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  z-index: 900;
 }
 
-.sidebar-logo h1 {
-  font-size: 42px;
-  color: #160be1;
-  margin-bottom: 40px;
-}
-
-.sidebar-logo span {
-  color: #5865f2;
-}
-
-nav {
+.logo {
   display: flex;
 
-  gap: 45px;
+  align-items: center;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  color: #232242;
 }
 
-nav a {
+.dot {
+  width: 10px;
+
+  height: 10px;
+
+  background: #5865f2;
+
+  border-radius: 50%;
+
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
   font-size: 16px;
 
   font-weight: 500;
+
+  color: #232242;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #5865f2;
 }
 
 .contact-btn {
-  padding: 15px 32px;
-
   background: #232242;
 
-  color: white;
+  color: #fff;
+
+  padding: 14px 30px;
 
   border: none;
 
   border-radius: 12px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #5865f2;
+}
+
+/* Hamburger */
+
+.menu-btn {
+  display: none;
+
+  background: none;
+
+  border: none;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  color: #232242;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1024px) {
+  .navbar {
+    left: 0;
+
+    padding: 0 25px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 75px;
+
+    padding: 0 18px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .menu-btn {
+    font-size: 24px;
+  }
 }

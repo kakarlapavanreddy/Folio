@@ -1,24 +1,53 @@
-.layout {
-  display: flex;
-
-  margin-top: 90px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.content {
-  margin-left: 280px;
-
-  width: calc(100% - 280px);
-
+body {
+  font-family: Poppins, sans-serif;
   background: #fafbff;
-
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-.app {
-  display: flex;
+.main-layout {
+  margin-left: 270px;
+
+  transition: 0.3s;
 }
 
 .main-content {
-  margin-left: 260px;
-  width: calc(100% - 260px);
+  margin-top: 90px;
+}
+
+section {
+  padding: 100px 80px;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1024px) {
+  .main-layout {
+    margin-left: 0;
+  }
+
+  section {
+    padding: 80px 40px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .main-layout {
+    margin-left: 0;
+  }
+
+  .main-content {
+    margin-top: 80px;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
 }
