@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App";
 
-import "./styles/global.css";
+import "./styles/Global.css";
 import "./styles/variables.css";
 import "./styles/responsive.css";
 
