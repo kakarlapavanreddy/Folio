@@ -1,0 +1,134 @@
+.overview {
+  padding: 120px 0;
+  background: #f8f9fd;
+}
+
+.overview-header {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.overview-header span {
+  color: #6c63ff;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.overview-header h2 {
+  font-size: 58px;
+  line-height: 1.2;
+  color: #181b4b;
+  margin-bottom: 25px;
+}
+
+.overview-header p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #666;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-bottom: 60px;
+}
+
+.overview-card {
+  background: #fff;
+  padding: 45px;
+  border-radius: 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: 0.35s;
+}
+
+.overview-icon {
+  font-size: 46px;
+  color: #6c63ff;
+  margin-bottom: 25px;
+}
+
+.overview-card h3 {
+  font-size: 30px;
+  color: #181b4b;
+  margin-bottom: 18px;
+}
+
+.overview-card p {
+  line-height: 1.8;
+  color: #666;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.primary-download,
+.secondary-download {
+  padding: 18px 36px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-download {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.primary-download:hover {
+  background: #181b4b;
+}
+
+.secondary-download {
+  background: #fff;
+  border: 2px solid #6c63ff;
+  color: #6c63ff;
+}
+
+.secondary-download:hover {
+  background: #6c63ff;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-header h2 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview {
+    padding: 80px 0;
+  }
+
+  .overview-header h2 {
+    font-size: 34px;
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primary-download,
+  .secondary-download {
+    width: 240px;
+    justify-content: center;
+  }
+}

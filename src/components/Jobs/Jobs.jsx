@@ -1,68 +1,59 @@
 import "./Jobs.css";
-import { FaMapMarkerAlt, FaBriefcase } from "react-icons/fa";
+import { motion } from "framer-motion";
+import JobCard from "./JobCard";
 
 const jobs = [
   {
     id: 1,
-    title: "Frontend Developer",
-    type: "Full Time",
-    location: "Remote",
-    experience: "1-3 Years",
+    title: "Graphic Designer",
+    openings: 2,
+    experience: "2 Years Experience",
+    active: true,
   },
   {
     id: 2,
-    title: "UI / UX Designer",
-    type: "Full Time",
-    location: "Hyderabad",
-    experience: "2+ Years",
+    title: "Visual Designer",
+    openings: 1,
+    experience: "2 Years Experience",
+    active: false,
   },
   {
     id: 3,
-    title: "React Developer Intern",
-    type: "Internship",
-    location: "Bangalore",
-    experience: "Fresher",
+    title: "Art Director",
+    openings: 1,
+    experience: "2 Years Experience",
+    active: false,
+  },
+  {
+    id: 4,
+    title: "Web Designer",
+    openings: 6,
+    experience: "2 Years Experience",
+    active: false,
   },
 ];
 
 function Jobs() {
   return (
     <section id="jobs" className="jobs">
-      <div className="section-heading">
-        <p>CAREERS</p>
+      <div className="container">
+        <motion.div
+          className="jobs-header"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <p>05. We Are Hiring</p>
 
-        <h2>Open Positions</h2>
+          <h2>Available Jobs</h2>
+        </motion.div>
 
-        <span>
-          Join our talented team and create modern digital experiences with us.
-        </span>
-      </div>
-
-      <div className="jobs-grid">
-        {jobs.map((job) => (
-          <div className="job-card" key={job.id}>
-            <h3>{job.title}</h3>
-
-            <div className="job-details">
-              <span>
-                <FaBriefcase /> {job.type}
-              </span>
-
-              <span>
-                <FaMapMarkerAlt /> {job.location}
-              </span>
-            </div>
-
-            <p className="exp">Experience : {job.experience}</p>
-
-            <p>
-              We are looking for passionate developers who enjoy creating
-              beautiful web applications using modern technologies.
-            </p>
-
-            <button>Apply Now</button>
-          </div>
-        ))}
+        <div className="jobs-grid">
+          {jobs.map((job) => (
+            <JobCard key={job.id} job={job} />
+          ))}
+        </div>
       </div>
     </section>
   );

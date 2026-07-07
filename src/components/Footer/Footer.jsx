@@ -1,77 +1,49 @@
 import "./Footer.css";
-
 import {
   FaFacebookF,
   FaTwitter,
-  FaLinkedinIn,
   FaInstagram,
+  FaLinkedinIn,
 } from "react-icons/fa";
 
 function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer-container">
-        {/* Company Information */}
-        <div className="footer-column">
-          <h2 className="footer-logo">Folio Agency</h2>
+      <div className="container">
+        {/* Top */}
 
-          <p>
-            We build modern, responsive and creative digital experiences for
-            startups and businesses.
-          </p>
+        <div className="footer-top">
+          <div className="footer-logo">
+            <h2>folio.</h2>
+            <p>
+              Creating beautiful digital experiences for brands around the
+              world.
+            </p>
+          </div>
+
+          <div className="footer-links">
+            <a href="#about">About</a>
+
+            <a href="#work">Work</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#jobs">Jobs</a>
+          </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer-column">
-          <h3>Quick Links</h3>
+        {/* Divider */}
 
-          <ul>
-            <li>
-              <a href="#home">Home</a>
-            </li>
+        <div className="footer-divider"></div>
 
-            <li>
-              <a href="#about">About</a>
-            </li>
+        {/* Bottom */}
 
-            <li>
-              <a href="#services">Services</a>
-            </li>
+        <div className="footer-bottom">
+          <p>© 2020 UI8 LLC. All Rights Reserved.</p>
 
-            <li>
-              <a href="#portfolio">Portfolio</a>
-            </li>
+          <div className="social-links">
+            <span>Follow us</span>
 
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Contact Information */}
-        <div className="footer-column">
-          <h3>Contact</h3>
-
-          <p>📍 Hyderabad, India</p>
-
-          <p>📧 contact@folioagency.com</p>
-
-          <p>📞 +91 9876543210</p>
-        </div>
-
-        {/* Newsletter */}
-        <div className="footer-column">
-          <h3>Newsletter</h3>
-
-          <p>Subscribe for latest updates.</p>
-
-          <form className="newsletter">
-            <input type="email" placeholder="Enter Email" />
-
-            <button type="submit">Subscribe</button>
-          </form>
-
-          <div className="social-icons">
             <a href="#">
               <FaFacebookF />
             </a>
@@ -81,20 +53,14 @@ function Footer() {
             </a>
 
             <a href="#">
-              <FaLinkedinIn />
+              <FaInstagram />
             </a>
 
             <a href="#">
-              <FaInstagram />
+              <FaLinkedinIn />
             </a>
           </div>
         </div>
-
-        <footer data-aos="fade-up"></footer>
-      </div>
-
-      <div className="footer-bottom">
-        <p>© 2026 Folio Agency. All Rights Reserved.</p>
       </div>
     </footer>
   );

@@ -1,0 +1,94 @@
+/* ===== Large Desktop ===== */
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* ===== Laptop ===== */
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 70px !important;
+  }
+
+  h2 {
+    font-size: 46px !important;
+  }
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 992px) {
+  .container {
+    width: 94%;
+  }
+
+  section {
+    padding: 90px 0 !important;
+  }
+
+  .hero-content,
+  .about-content,
+  .visual-content,
+  .contact-container,
+  .hero-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-image,
+  .about-image {
+    margin-top: 50px;
+  }
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0 !important;
+  }
+
+  h1 {
+    font-size: 48px !important;
+  }
+
+  h2 {
+    font-size: 34px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+  button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .grid,
+  .jobs-grid,
+  .portfolio-grid,
+  .services-grid,
+  .recent-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== Small Mobile ===== */
+
+@media (max-width: 480px) {
+  .container {
+    width: 92%;
+  }
+
+  h1 {
+    font-size: 38px !important;
+  }
+
+  h2 {
+    font-size: 28px !important;
+  }
+}

@@ -1,0 +1,149 @@
+.hiring {
+  padding: 120px 20px;
+
+  background: linear-gradient(135deg, #5d5fef, #785bff);
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  color: white;
+}
+
+.hiring-content {
+  max-width: 750px;
+
+  margin: auto;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.sub-title {
+  font-size: 15px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+.hiring h2 {
+  font-size: 64px;
+
+  margin: 25px 0;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.hiring p {
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  opacity: 0.9;
+
+  margin-bottom: 45px;
+}
+
+.hiring button {
+  padding: 18px 42px;
+
+  background: white;
+
+  color: #5d5fef;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.hiring button:hover {
+  background: #1d1f4f;
+
+  color: white;
+}
+
+.shape {
+  position: absolute;
+
+  border-radius: 50%;
+
+  opacity: 0.18;
+}
+
+.shape1 {
+  width: 350px;
+
+  height: 350px;
+
+  background: white;
+
+  top: -140px;
+
+  left: -80px;
+}
+
+.shape2 {
+  width: 250px;
+
+  height: 250px;
+
+  background: #fff;
+
+  right: -80px;
+
+  bottom: -60px;
+}
+
+.shape3 {
+  width: 120px;
+
+  height: 120px;
+
+  background: white;
+
+  left: 50%;
+
+  bottom: 30px;
+
+  transform: translateX(-50%);
+}
+
+@media (max-width: 992px) {
+  .hiring h2 {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hiring {
+    padding: 80px 20px;
+  }
+
+  .hiring h2 {
+    font-size: 36px;
+  }
+
+  .hiring p {
+    font-size: 16px;
+  }
+
+  .hiring button {
+    width: 100%;
+  }
+}

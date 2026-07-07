@@ -1,8 +1,6 @@
 * {
   margin: 0;
-
   padding: 0;
-
   box-sizing: border-box;
 }
 
@@ -12,28 +10,31 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-
-  background: var(--background);
-
-  color: var(--text);
-
+  background: #fff;
+  color: #181b4b;
   overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-
-  color: inherit;
-}
-
-button {
-  font-family: inherit;
-
-  cursor: pointer;
 }
 
 img {
   width: 100%;
-
   display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
 }

@@ -1,0 +1,28 @@
+.download-cta {
+  padding: 100px 20px;
+  text-align: center;
+  background: #111827;
+  color: #fff;
+}
+
+.download-cta h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.download-cta p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+.download-cta button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 600;
+}

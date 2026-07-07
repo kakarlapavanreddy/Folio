@@ -1,115 +1,78 @@
-import { useState } from "react";
 import "./Contact.css";
-
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    alert("Message Sent Successfully!");
-
-    console.log(formData);
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  }
-
   return (
-    <section className="contact" id="contact">
-      <div className="container">
-        <h2 className="section-title">Contact Us</h2>
+    <section id="contact" className="contact">
+      <div className="container contact-container">
+        {/* LEFT */}
 
-        <div className="contact-wrapper">
+        <motion.div
+          className="contact-left"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-title">👋 Say Hello</span>
+
+          <h2>
+            Let's talk about
+            <br />
+            your next project
+          </h2>
+
+          <h3>Invest in your designs today!</h3>
+
+          <p>
+            Agency is a full-service agency, busy designing and building
+            beautiful digital products, brands and experiences.
+          </p>
+
           <div className="contact-info">
-            <h3>Get In Touch</h3>
-
-            <p>We'd love to hear about your project.</p>
-
-            <div className="info-box">
-              <FaPhone />
-
-              <span>+91 9876543210</span>
-            </div>
-
-            <div className="info-box">
+            <div className="info">
               <FaEnvelope />
 
-              <span>contact@folioagency.com</span>
+              <span>hello@folioagency.com</span>
             </div>
 
-            <div className="info-box">
+            <div className="info">
+              <FaPhoneAlt />
+
+              <span>+91 98765 43210</span>
+            </div>
+
+            <div className="info">
               <FaMapMarkerAlt />
 
               <span>Hyderabad, India</span>
             </div>
           </div>
+        </motion.div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+        {/* RIGHT */}
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+        <motion.div
+          className="contact-right"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <form>
+            <input type="text" placeholder="Your Name" />
 
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
+            <input type="email" placeholder="Email Address" />
 
-            <textarea
-              rows="6"
-              name="message"
-              placeholder="Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
+            <input type="text" placeholder="Subject" />
 
-            <button type="submit">Send Message</button>
+            <textarea rows="6" placeholder="Write your message..."></textarea>
+
+            <button>Send Message</button>
           </form>
-        </div>
+        </motion.div>
       </div>
-
-      <div className="contact-info" data-aos="fade-right"></div>
-
-      <form data-aos="fade-left"></form>
     </section>
   );
 }

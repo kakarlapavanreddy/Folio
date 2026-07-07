@@ -1,16 +1,21 @@
-function ServiceCard({ title, description, image }) {
+import { motion } from "framer-motion";
+import "./Services.css";
+
+function ServiceCard({ number, title, description, active }) {
   return (
-    <div className="service-card">
-      <img src={image} alt={title} className="service-image" />
+    <motion.div
+      className={active ? "service-card active" : "service-card"}
+      whileHover={{ y: -12 }}
+      transition={{ duration: 0.3 }}
+    >
+      <span className="service-number">{number}</span>
 
-      <div className="service-content">
-        <h3>{title}</h3>
+      <h3>{title}</h3>
 
-        <p>{description}</p>
+      <p>{description}</p>
 
-        <button>Learn More</button>
-      </div>
-    </div>
+      <button>Learn More →</button>
+    </motion.div>
   );
 }
 

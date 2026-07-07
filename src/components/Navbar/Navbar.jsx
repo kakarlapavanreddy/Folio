@@ -1,40 +1,62 @@
+import { useEffect, useState } from "react";
 import "./Navbar.css";
-import { FaBars } from "react-icons/fa";
 
-function Navbar({ setSidebarOpen }) {
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+
+const navLinks = [
+  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
+  { id: "work", label: "Work" },
+  { id: "jobs", label: "Jobs", badge: "2" },
+];
+
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <header className="navbar">
-      {/* Left */}
+    <header className={sticky ? "navbar sticky" : "navbar"}>
+      <div className="container navbar-container">
+        {/* Logo */}
+        <a href="/" className="logo">
+          folio<span>.</span>
+        </a>
 
-      <div className="navbar-left">
-        <div className="logo">
-          <span className="logo-dot"></span>
+        {/* Navigation Links */}
+        <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
+          {navLinks.map((item) => (
+            <a key={item.id} href={`#${item.id}`} onClick={closeMenu}>
+              {item.label}
 
-          <h2>folio.</h2>
-        </div>
-      </div>
+              {item.badge && <span className="badge">{item.badge}</span>}
+            </a>
+          ))}
+        </nav>
 
-      {/* Center */}
+        {/* Right Side Contact Button */}
+        <a href="#contact" className="contact-btn desktop-btn">
+          Contact Us
+        </a>
 
-      <nav className="navbar-menu">
-        <a href="#about">About</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#projects">Projects</a>
-
-        <a href="#jobs">Jobs</a>
-
-        <a href="#contact">Contact</a>
-      </nav>
-
-      {/* Right */}
-
-      <div className="navbar-right">
-        <button className="contact-btn">Contact Us</button>
-
-        <button className="menu-btn" onClick={() => setSidebarOpen(true)}>
-          <FaBars />
+        {/* Mobile Menu Button */}
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
         </button>
       </div>
     </header>
