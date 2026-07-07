@@ -48,8 +48,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         </button>
 
         <div className="sidebar-content">
-          <h2 className="logo">folio.</h2>
-
           <p className="heading">PAGES</p>
 
           <ul>
