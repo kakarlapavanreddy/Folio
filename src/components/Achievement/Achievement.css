@@ -1,110 +1,163 @@
+/* ===========================
+   Achievement Section
+=========================== */
+
 .achievement {
   padding: 120px 0;
-  background: #f8f9fd;
+  background: #fafbff;
 }
 
-.achievement-header {
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.achievement-header p {
-  color: #6c63ff;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.achievement-header h2 {
-  font-size: 52px;
-  line-height: 1.3;
-  color: #181b4b;
-  max-width: 850px;
-  margin: auto;
-}
-
-.achievement-content {
+.achievement-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
   align-items: center;
+  gap: 90px;
 }
+
+/* ===========================
+   Left Side
+=========================== */
 
 .achievement-left {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.circle {
-  width: 260px;
-  height: 260px;
+.phone-wrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink-circle {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: linear-gradient(135deg, #ffd7e5, #ff8db9);
   border-radius: 50%;
-  background: #6c63ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.35);
+  z-index: 0;
 }
 
-.circle h1 {
-  font-size: 90px;
+.phone-image {
+  position: absolute;
+  width: 320px;
+  z-index: 2;
+  border-radius: 35px;
+  object-fit: cover;
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.2);
 }
 
-.project-text {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.project-text h3 {
-  font-size: 30px;
-  color: #181b4b;
-}
-
-.emoji {
-  font-size: 34px;
-  color: #ffb400;
-}
+/* ===========================
+   Right Side
+=========================== */
 
 .achievement-right {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.stat-card {
-  background: #fff;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-}
-
-.stat-card:hover {
-  transform: translateY(-8px);
-}
-
-.stat-card h2 {
-  font-size: 44px;
+.section-no {
   color: #6c63ff;
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-.stat-card p {
-  color: #666;
-  font-size: 17px;
+.achievement-right h2 {
+  font-size: 58px;
+  color: #181b4b;
+  margin-bottom: 25px;
+  line-height: 1.1;
 }
 
-@media (max-width: 992px) {
-  .achievement-content {
+.achievement-right p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #6b7280;
+  max-width: 520px;
+}
+
+/* ===========================
+   Project Box
+=========================== */
+
+.project-box {
+  margin-top: 55px;
+}
+
+.project-box h1 {
+  font-size: 110px;
+  color: #6c63ff;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.project-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #181b4b;
+}
+
+.project-text span {
+  display: inline-block;
+}
+
+.project-text .emoji {
+  font-size: 34px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 1100px) {
+  .achievement-wrapper {
     grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
   }
 
-  .achievement-header h2 {
-    font-size: 40px;
+  .achievement-right {
+    align-items: center;
+  }
+
+  .phone-wrapper {
+    width: 420px;
+    height: 420px;
+  }
+
+  .phone-image {
+    width: 360px;
+    left: 30px;
+    top: 10px;
+  }
+
+  .pink-circle {
+    width: 300px;
+    height: 300px;
+    left: 55px;
+    top: 70px;
+  }
+
+  .achievement-right h2 {
+    font-size: 46px;
+  }
+
+  .project-box h1 {
+    font-size: 90px;
+  }
+
+  .project-text {
+    justify-content: center;
   }
 }
 
@@ -113,21 +166,37 @@
     padding: 80px 0;
   }
 
-  .circle {
-    width: 200px;
-    height: 200px;
+  .phone-wrapper {
+    width: 320px;
+    height: 320px;
   }
 
-  .circle h1 {
+  .phone-image {
+    width: 270px;
+    left: 25px;
+    top: 15px;
+  }
+
+  .pink-circle {
+    width: 220px;
+    height: 220px;
+    left: 45px;
+    top: 55px;
+  }
+
+  .achievement-right h2 {
+    font-size: 36px;
+  }
+
+  .achievement-right p {
+    font-size: 16px;
+  }
+
+  .project-box h1 {
     font-size: 70px;
   }
 
-  .achievement-right {
-    grid-template-columns: 1fr;
-  }
-
   .project-text {
-    flex-direction: column;
-    text-align: center;
+    font-size: 22px;
   }
 }

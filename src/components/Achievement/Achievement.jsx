@@ -1,70 +1,40 @@
 import "./Achievement.css";
-import { motion } from "framer-motion";
-import { FaSmileBeam } from "react-icons/fa";
 
 function Achievement() {
   return (
-    <section id="achievement" className="achievement">
-      <div className="container">
-        <motion.div
-          className="achievement-header"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p>03. Achievement</p>
+    <section className="achievement" id="achievement">
+      <div className="container achievement-wrapper">
+        {/* Left */}
 
-          <h2>
-            A design team building a curated marketplace for UI designers.
-          </h2>
-        </motion.div>
+        <div className="achievement-left">
+          <div className="phone-wrapper">
+            <div className="pink-circle"></div>
 
-        <div className="achievement-content">
-          <motion.div
-            className="achievement-left"
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="circle">
-              <h1>68</h1>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700"
+              alt="Phone"
+              className="phone-image"
+            />
+          </div>
+        </div>
+
+        {/* Right */}
+
+        <div className="achievement-right">
+          <span className="section-no">03.</span>
+
+          <h2>Achievement</h2>
+
+          <p>A design team building a curated marketplace for UI designers.</p>
+
+          <div className="project-box">
+            <h1>68</h1>
 
             <div className="project-text">
-              <FaSmileBeam className="emoji" />
-              <h3>Successful Projects</h3>
+              <span className="emoji">😎</span>
+              <span>Successful Projects</span>
             </div>
-          </motion.div>
-
-          <motion.div
-            className="achievement-right"
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="stat-card">
-              <h2>120+</h2>
-              <p>Happy Clients</p>
-            </div>
-
-            <div className="stat-card">
-              <h2>50+</h2>
-              <p>Team Members</p>
-            </div>
-
-            <div className="stat-card">
-              <h2>10+</h2>
-              <p>Years Experience</p>
-            </div>
-
-            <div className="stat-card">
-              <h2>24/7</h2>
-              <p>Support</p>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

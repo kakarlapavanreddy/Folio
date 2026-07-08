@@ -1,61 +1,67 @@
 import "./Services.css";
 import ServiceCard from "./ServiceCard";
 import { motion } from "framer-motion";
+import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
 
 const services = [
   {
-    number: "01",
     title: "Strategy",
-    description:
-      "Creating digital strategies that help brands grow and connect with customers.",
+    image: "https://cdn.jsdelivr.net/npm/lucide-static/icons/target.svg",
     active: false,
   },
   {
-    number: "02",
     title: "Branding",
-    description:
-      "Building memorable brands with modern visual identity and storytelling.",
+    image: "https://cdn.jsdelivr.net/npm/lucide-static/icons/palette.svg",
     active: true,
   },
   {
-    number: "03",
     title: "Interactive",
-    description:
-      "Designing engaging digital experiences for web and mobile products.",
+    image: "https://cdn.jsdelivr.net/npm/lucide-static/icons/monitor.svg",
     active: false,
   },
   {
-    number: "04",
     title: "Communicate",
-    description:
-      "Helping businesses communicate clearly through impactful design.",
+    image:
+      "https://cdn.jsdelivr.net/npm/lucide-static/icons/messages-square.svg",
     active: false,
   },
 ];
 
 function Services() {
   return (
-    <section id="services" className="services">
+    <section className="services" id="services">
       <div className="container">
         <motion.div
           className="services-heading"
-          initial={{ opacity: 0, y: 70 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <p>02. What We Do</p>
 
-          <h2>
-            We Make Designs that
-            <br />
-            Lead and Inspire.
-          </h2>
+          <div className="services-title-row">
+            <h2>
+              We Make Designs that
+              <br />
+              Lead and Inspire.
+            </h2>
+
+            <div className="services-arrows">
+              <button className="arrow-btn">
+                <HiArrowLeft />
+              </button>
+
+              <button className="arrow-btn active">
+                <HiArrowRight />
+              </button>
+            </div>
+          </div>
         </motion.div>
 
         <div className="services-grid">
-          {services.map((service) => (
-            <ServiceCard key={service.number} {...service} />
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
           ))}
         </div>
       </div>
