@@ -14,7 +14,8 @@ const recentWorks = [
     name: "Bento Vol. 3",
     description:
       "Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.",
-    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+    image:
+      "https://www.figma.com/design/nYZXo1IRfdkghQDh5qIUrv/Folio-Agency-1.0--figmamarket.com-?node-id=0-561&t=273dzhHWb9nVstME-4.",
   },
 
   {

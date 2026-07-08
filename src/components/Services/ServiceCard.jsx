@@ -1,14 +1,26 @@
 import "./Services.css";
+import { motion } from "framer-motion";
 
-function ServiceCard({ title, image, active, number }) {
+function ServiceCard({ service }) {
   return (
-    <div className={`service-card ${active ? "active" : ""}`}>
-      <img src={image} alt={title} />
+    <motion.div
+      className={`service-card ${service.active ? "active" : ""}`}
+      whileHover={{
+        y: -10,
+        scale: 1.03,
+      }}
+      transition={{
+        duration: 0.3,
+      }}
+    >
+      <div className="service-icon">
+        <img src={service.icon} alt={service.title} />
+      </div>
 
-      <span>{number}</span>
+      <h3>{service.title}</h3>
 
-      <h3>{title}</h3>
-    </div>
+      <p>{service.description}</p>
+    </motion.div>
   );
 }
 
