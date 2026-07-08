@@ -16,21 +16,36 @@
   transition: 0.3s;
 }
 
+/* DARK MODE NAVBAR */
+
+[data-theme="dark"] .navbar {
+  background: rgba(17, 17, 17, 0.85);
+}
+
 .sticky {
   padding: 16px 0;
+
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-container {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
 .logo {
   font-size: 34px;
+
   font-weight: 700;
+
   color: #181b4b;
+}
+
+[data-theme="dark"] .logo {
+  color: white;
 }
 
 .logo span {
@@ -39,16 +54,26 @@
 
 .nav-menu {
   display: flex;
+
   align-items: center;
+
   gap: 42px;
 }
 
 .nav-menu a {
   position: relative;
+
   font-size: 16px;
+
   font-weight: 500;
+
   color: #555;
+
   transition: 0.3s;
+}
+
+[data-theme="dark"] .nav-menu a {
+  color: #ddd;
 }
 
 .nav-menu a:hover {
@@ -57,42 +82,100 @@
 
 .badge {
   position: absolute;
+
   top: -10px;
+
   right: -18px;
+
   background: #6c63ff;
+
   color: #fff;
+
   font-size: 10px;
+
   width: 18px;
+
   height: 18px;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   border-radius: 50%;
 }
 
 .contact-btn {
   padding: 15px 28px;
+
   background: #181b4b;
+
   color: #fff;
+
   border-radius: 12px;
+
   font-weight: 600;
-  transition: 0.3s;
 }
 
 .contact-btn:hover {
   background: #6c63ff;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 34px;
+/* THEME BUTTON */
+
+.theme-toggle {
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 1px solid #ddd;
+
+  background: #ffffff;
+
+  color: #181b4b;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
   cursor: pointer;
+
+  transition: 0.3s;
 }
 
-.mobile-btn {
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* DARK MODE BUTTON */
+
+[data-theme="dark"] .theme-toggle {
+  background: #ffffff;
+
+  color: #181b4b;
+
+  border-color: #ffffff;
+}
+
+/* MOBILE */
+
+.menu-toggle {
   display: none;
+
+  background: none;
+
+  border: none;
+
+  font-size: 34px;
+
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
@@ -106,25 +189,34 @@
 
   .nav-menu {
     position: fixed;
+
     top: 0;
+
     right: -100%;
+
     width: 300px;
+
     height: 100vh;
+
     background: #fff;
+
     flex-direction: column;
+
     justify-content: center;
+
     gap: 35px;
+
     transition: 0.35s;
+
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] .nav-menu {
+    background: #111;
   }
 
   .nav-menu.active {
     right: 0;
-  }
-
-  .mobile-btn {
-    display: inline-block;
-    margin-top: 20px;
   }
 }
 

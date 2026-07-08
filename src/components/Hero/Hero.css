@@ -1,57 +1,112 @@
 .hero {
   min-height: 100vh;
+
   display: flex;
+
   align-items: center;
+
   position: relative;
+
   overflow: hidden;
+
   padding-top: 140px;
+
   background: #fff;
+}
+
+/* RIGHT SIDE LIGHT BACKGROUND */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: -200px;
+
+  right: -250px;
+
+  width: 900px;
+
+  height: 1000px;
+
+  background: #f4efff;
+
+  border-radius: 0 0 0 60%;
+
+  z-index: 0;
 }
 
 .hero-container {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 80px;
+
+  position: relative;
+
+  z-index: 1;
 }
+
+/* LEFT */
 
 .hero-left {
   flex: 1;
-  position: relative;
-  z-index: 2;
 }
 
 .hero-subtitle {
   color: #6c63ff;
+
   font-size: 18px;
+
   margin-bottom: 20px;
+
   font-weight: 600;
 }
 
 .hero-left h1 {
   font-size: 88px;
+
   line-height: 1;
+
   color: #181b4b;
+
   margin-bottom: 30px;
+
   font-weight: 700;
 }
 
 .hero-text {
   max-width: 500px;
+
   font-size: 18px;
+
   line-height: 1.8;
+
   color: #666;
+
   margin-bottom: 40px;
 }
 
+/* BUTTON */
+
 .primary-btn {
   background: #6c63ff;
-  color: #fff;
+
+  color: white;
+
   padding: 18px 40px;
+
   border: none;
+
   border-radius: 14px;
-  font-size: 16px;
+
   font-weight: 600;
+
+  cursor: pointer;
+
   transition: 0.3s;
 }
 
@@ -59,91 +114,190 @@
   background: #181b4b;
 }
 
+/* SCROLL */
+
 .scroll-box {
   display: flex;
+
   align-items: center;
+
   gap: 18px;
+
   margin-top: 70px;
 }
 
 .scroll-icon {
   width: 55px;
+
   height: 55px;
+
   background: #dcc8ff;
+
   display: flex;
-  align-items: center;
+
   justify-content: center;
+
+  align-items: center;
+
   border-radius: 50%;
-  color: #fff;
+
+  color: white;
 }
+
+/* RIGHT */
 
 .hero-right {
   flex: 1;
+
   position: relative;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 }
 
+/* PURPLE BACKGROUND SHAPE */
+
 .purple-card {
   position: absolute;
-  width: 480px;
-  height: 560px;
+
+  width: 520px;
+
+  height: 620px;
+
   background: #d9a3ff;
-  border-radius: 40px;
-  right: 20px;
+
+  right: 0;
+
+  bottom: -40px;
+
+  clip-path: polygon(
+    25% 0%,
+
+    100% 0%,
+
+    100% 100%,
+
+    0% 100%
+  );
 }
 
-.hero-right img {
-  width: 620px;
+/* IMAGE CURVED EDGE */
+
+.hero-image-box {
+  width: 520px;
+
+  height: 520px;
+
+  overflow: hidden;
+
   position: relative;
+
   z-index: 2;
+
+  border-radius: 90px 90px 160px 90px;
+
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
 }
+
+.hero-image-box img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* CIRCLES */
 
 .hero-circle {
   position: absolute;
+
   border: 2px solid #eef0ff;
+
   border-radius: 50%;
 }
 
 .circle-one {
   width: 650px;
+
   height: 650px;
+
   top: -280px;
+
   left: 180px;
 }
 
 .circle-two {
   width: 300px;
+
   height: 300px;
+
   top: 180px;
+
   left: 520px;
 }
+
+/* DARK MODE */
+
+[data-theme="dark"] .hero {
+  background: #111;
+}
+
+[data-theme="dark"] .hero::before {
+  background: #1d1d1d;
+}
+
+[data-theme="dark"] .hero-left h1 {
+  color: white;
+}
+
+[data-theme="dark"] .hero-text {
+  color: #aaa;
+}
+
+[data-theme="dark"] .hero-circle {
+  border-color: #333;
+}
+
+/* TABLET */
 
 @media (max-width: 1200px) {
   .hero-left h1 {
     font-size: 72px;
   }
 
-  .hero-right img {
-    width: 500px;
+  .hero-image-box {
+    width: 450px;
+
+    height: 450px;
   }
 
   .purple-card {
-    width: 400px;
-    height: 470px;
+    width: 450px;
+
+    height: 520px;
   }
 }
+
+/* MOBILE */
 
 @media (max-width: 992px) {
   .hero-container {
     flex-direction: column-reverse;
+
     text-align: center;
   }
 
   .hero-left {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
   }
 
@@ -151,23 +305,16 @@
     font-size: 58px;
   }
 
-  .hero-right {
-    margin-bottom: 40px;
-  }
+  .hero-image-box {
+    width: 400px;
 
-  .hero-right img {
-    width: 90%;
-    max-width: 500px;
+    height: 400px;
   }
 
   .purple-card {
     width: 80%;
-    height: 90%;
-    right: auto;
-  }
 
-  .scroll-box {
-    justify-content: center;
+    height: 450px;
   }
 }
 
@@ -188,7 +335,9 @@
     width: 100%;
   }
 
-  .hero-right img {
+  .hero-image-box {
     width: 100%;
+
+    height: 350px;
   }
 }

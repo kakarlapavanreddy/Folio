@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
+import { ThemeContext } from "../../context/ThemeContext";
 
-import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { HiOutlineMenuAlt3, HiOutlineX, HiMoon, HiSun } from "react-icons/hi";
 
 const navLinks = [
   { id: "about", label: "About" },
@@ -13,6 +14,7 @@ const navLinks = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +59,10 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
+        </button>
+
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {darkMode ? <HiSun /> : <HiMoon />}
         </button>
       </div>
     </header>

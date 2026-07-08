@@ -1,15 +1,15 @@
 :root {
-  --primary: #6c63ff;
-  --secondary: #181b4b;
-  --text: #666666;
-  --light: #f8f9fd;
-  --white: #ffffff;
+  --bg-color: #ffffff;
 
-  --container: 1200px;
+  --card-bg: #ffffff;
 
-  --radius: 20px;
+  --border-color: #eeeeee;
+}
 
-  --transition: 0.3s;
+[data-theme="dark"] {
+  --bg-color: #111111;
 
-  --shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  --card-bg: #1c1c1c;
+
+  --border-color: #333333;
 }

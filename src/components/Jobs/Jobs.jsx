@@ -10,6 +10,7 @@ const jobs = [
     experience: "2 Years Experience",
     active: true,
   },
+
   {
     id: 2,
     title: "Visual Designer",
@@ -17,6 +18,7 @@ const jobs = [
     experience: "2 Years Experience",
     active: false,
   },
+
   {
     id: 3,
     title: "Art Director",
@@ -24,6 +26,7 @@ const jobs = [
     experience: "2 Years Experience",
     active: false,
   },
+
   {
     id: 4,
     title: "Web Designer",
@@ -39,10 +42,20 @@ function Jobs() {
       <div className="container">
         <motion.div
           className="jobs-header"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
+          viewport={{
+            once: true,
+          }}
         >
           <p>05. We Are Hiring</p>
 

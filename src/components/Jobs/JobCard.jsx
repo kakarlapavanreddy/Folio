@@ -6,8 +6,12 @@ function JobCard({ job }) {
   return (
     <motion.div
       className={job.active ? "job-card active" : "job-card"}
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{
+        y: -8,
+      }}
+      transition={{
+        duration: 0.3,
+      }}
     >
       <div className="job-top">
         <h3>{job.title}</h3>

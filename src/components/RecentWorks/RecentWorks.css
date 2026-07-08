@@ -4,45 +4,63 @@
 
 .recent-works {
   padding: 120px 0;
-  background: #fff;
+
+  background: var(--bg-color);
+
+  transition: 0.3s ease;
 }
 
 .recent-header {
   max-width: 750px;
+
   margin: 0 auto 70px;
+
   text-align: center;
 }
 
 .recent-header span {
   display: block;
+
   color: #6c63ff;
+
   font-weight: 700;
+
   margin-bottom: 15px;
 }
 
 .recent-header h2 {
   font-size: 56px;
+
   color: #181b4b;
+
   margin-bottom: 20px;
 }
 
 .recent-header p {
   color: #666;
+
   line-height: 1.8;
+
   font-size: 17px;
 }
 
 .recent-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 35px;
 }
 
 .recent-card {
-  background: #fff;
+  background: var(--card-bg);
+
   border-radius: 25px;
+
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+
+  border: 1px solid var(--border-color);
+
   transition: 0.35s;
 }
 
@@ -52,12 +70,15 @@
 
 .recent-image {
   position: relative;
+
   overflow: hidden;
 }
 
 .recent-image img {
   width: 100%;
+
   display: block;
+
   transition: 0.5s;
 }
 
@@ -67,12 +88,19 @@
 
 .recent-overlay {
   position: absolute;
+
   inset: 0;
+
   background: rgba(24, 27, 75, 0.65);
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   opacity: 0;
+
   transition: 0.35s;
 }
 
@@ -82,13 +110,21 @@
 
 .recent-btn {
   text-decoration: none;
+
   color: #fff;
+
   background: #6c63ff;
+
   padding: 15px 28px;
+
   border-radius: 30px;
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   font-weight: 600;
 }
 
@@ -98,129 +134,49 @@
 
 .recent-content span {
   color: #6c63ff;
+
   font-size: 15px;
+
   font-weight: 600;
 }
 
 .recent-content h3 {
   margin: 15px 0;
+
   font-size: 28px;
+
   color: #181b4b;
 }
 
 .recent-content p {
   color: #666;
-  line-height: 1.8;
-}
-
-/* =========================
-   DOWNLOAD CTA
-========================= */
-
-.download-section {
-  padding: 120px 0;
-  background: #f8f9fd;
-}
-
-.download-box {
-  background: linear-gradient(135deg, #6c63ff, #8d68ff);
-
-  border-radius: 35px;
-
-  padding: 90px;
-
-  color: #fff;
-
-  text-align: center;
-}
-
-.download-box span {
-  font-weight: 700;
-
-  display: block;
-
-  margin-bottom: 15px;
-}
-
-.download-box h2 {
-  font-size: 58px;
-
-  margin-bottom: 25px;
-}
-
-.download-box p {
-  max-width: 700px;
-
-  margin: auto;
 
   line-height: 1.8;
-
-  margin-bottom: 45px;
 }
 
-.download-btn-large {
-  display: inline-flex;
+/* DARK MODE ONLY */
 
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 18px 40px;
-
-  background: #fff;
-
-  color: #6c63ff;
-
-  border-radius: 50px;
-
-  text-decoration: none;
-
-  font-weight: 700;
-
-  transition: 0.35s;
+[data-theme="dark"] .recent-header h2 {
+  color: white;
 }
 
-.download-btn-large:hover {
-  background: #181b4b;
-
-  color: #fff;
+[data-theme="dark"] .recent-content h3 {
+  color: white;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+[data-theme="dark"] .recent-content p {
+  color: #bbbbbb;
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 992px) {
   .recent-grid {
     grid-template-columns: 1fr;
   }
-
-  .download-box {
-    padding: 60px 35px;
-  }
-
-  .download-box h2 {
-    font-size: 42px;
-  }
 }
 
 @media (max-width: 768px) {
-  .recent-works {
-    padding: 80px 0;
-  }
-
-  .download-section {
-    padding: 80px 0;
-  }
-
-  .download-box {
-    padding: 40px 25px;
-  }
-
-  .download-box h2 {
-    font-size: 32px;
-  }
-
   .recent-header h2 {
     font-size: 36px;
   }

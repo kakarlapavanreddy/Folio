@@ -57,7 +57,9 @@ function Hero() {
         >
           <div className="purple-card"></div>
 
-          <img src={heroImage} alt="Hero" />
+          <div className="hero-image-box">
+            <img src={heroImage} alt="Hero" />
+          </div>
         </motion.div>
       </div>
     </section>
